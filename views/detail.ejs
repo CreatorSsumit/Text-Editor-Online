@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        Text Editor
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+    <div id="screen">
+
+        <!-- left side part -->
+
+        <div id="leftside">
+            <button id="file">  File  ></button>
+
+            <form action="/saves" method="post">
+                <input style="border: 1px solid grey !important;" id="files" type="submit" value="save">
+
+                <!-- box  -->
+
+                <div id="openbox">
+                    <h5 style="display: inline;">/Upload/</h5>
+                    <a style="color: rgb(172, 172, 172); text-decoration: none;" href="" name="ff">
+                        <%= filname%>
+                    </a>
+                    <br>
+
+
+                    <h5 style="color: white;  margin-top: 8px; font-weight: 500;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+
+                        <a style="color: rgb(172, 172, 172); text-decoration: none;" href=""></a>
+
+                    </h5>
+                    <a style="font-size: 15px; color: rgb(255, 133, 133); text-decoration: none; margin-right: 7px;" href="/goback/">Goback</a>
+
+
+                </div>
+        </div>
+
+        <!-- right side part -->
+
+        <div id="rightside">
+            <nav style="background-color: rgb(48, 48, 48); font-size: 14px; position: relative; display: flex; justify-content: center;align-items: center; color: rgb(228, 228, 228); height: 4%;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; min-width: 10%;">
+                <input type="hidden" name="ff" value=<%=filname %>>
+                <%= filname%>
+
+            </nav>
+            <textarea name="textareas">
+                
+                
+ <%= area%></textarea>
+
+        </div>
+        </form>
+
+    </div>
+
+
+
+
+    <script>
+        var data = document.querySelector('#file');
+        data.addEventListener('click', function() {
+            var t1 = new TimelineMax();
+
+            t1.fromTo('#files', 1, {
+
+                opacity: 0,
+                ease: Expo.easeInOut
+            }, {
+
+                opacity: 1,
+                ease: Expo.easeInOut,
+            }).fromTo('#filess', 1, {
+
+                opacity: 0,
+                ease: Expo.easeInOutss
+            }, {
+
+                opacity: 1,
+                ease: Expo.easeInOut,
+            })
+        })
+    </script>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+
+
+
+
+
+</body>
+
+</html>
